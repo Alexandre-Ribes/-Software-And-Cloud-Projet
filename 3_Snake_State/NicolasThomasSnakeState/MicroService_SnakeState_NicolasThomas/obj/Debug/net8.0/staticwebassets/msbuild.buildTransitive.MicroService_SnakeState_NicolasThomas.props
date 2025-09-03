@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\MicroService_SnakeState_NicolasThomas.props" />
+</Project>

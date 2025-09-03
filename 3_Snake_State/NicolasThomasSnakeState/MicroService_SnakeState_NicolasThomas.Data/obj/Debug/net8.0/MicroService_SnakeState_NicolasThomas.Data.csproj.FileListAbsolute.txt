@@ -1,0 +1,11 @@
+C:\Users\Niico\source\repos\NicolasThomasSnakeState\MicroService_SnakeState_NicolasThomas.Data\bin\Debug\net8.0\MicroService_SnakeState_NicolasThomas.Data.deps.json
+C:\Users\Niico\source\repos\NicolasThomasSnakeState\MicroService_SnakeState_NicolasThomas.Data\bin\Debug\net8.0\MicroService_SnakeState_NicolasThomas.Data.dll
+C:\Users\Niico\source\repos\NicolasThomasSnakeState\MicroService_SnakeState_NicolasThomas.Data\bin\Debug\net8.0\MicroService_SnakeState_NicolasThomas.Data.pdb
+C:\Users\Niico\source\repos\NicolasThomasSnakeState\MicroService_SnakeState_NicolasThomas.Data\obj\Debug\net8.0\MicroService_SnakeState_NicolasThomas.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Niico\source\repos\NicolasThomasSnakeState\MicroService_SnakeState_NicolasThomas.Data\obj\Debug\net8.0\MicroService_SnakeState_NicolasThomas.Data.AssemblyInfoInputs.cache
+C:\Users\Niico\source\repos\NicolasThomasSnakeState\MicroService_SnakeState_NicolasThomas.Data\obj\Debug\net8.0\MicroService_SnakeState_NicolasThomas.Data.AssemblyInfo.cs
+C:\Users\Niico\source\repos\NicolasThomasSnakeState\MicroService_SnakeState_NicolasThomas.Data\obj\Debug\net8.0\MicroService_SnakeState_NicolasThomas.Data.csproj.CoreCompileInputs.cache
+C:\Users\Niico\source\repos\NicolasThomasSnakeState\MicroService_SnakeState_NicolasThomas.Data\obj\Debug\net8.0\MicroService_SnakeState_NicolasThomas.Data.dll
+C:\Users\Niico\source\repos\NicolasThomasSnakeState\MicroService_SnakeState_NicolasThomas.Data\obj\Debug\net8.0\refint\MicroService_SnakeState_NicolasThomas.Data.dll
+C:\Users\Niico\source\repos\NicolasThomasSnakeState\MicroService_SnakeState_NicolasThomas.Data\obj\Debug\net8.0\MicroService_SnakeState_NicolasThomas.Data.pdb
+C:\Users\Niico\source\repos\NicolasThomasSnakeState\MicroService_SnakeState_NicolasThomas.Data\obj\Debug\net8.0\ref\MicroService_SnakeState_NicolasThomas.Data.dll

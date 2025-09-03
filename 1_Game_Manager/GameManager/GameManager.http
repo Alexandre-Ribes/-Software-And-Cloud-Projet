@@ -1,0 +1,6 @@
+@GameManager_HostAddress = http://localhost:5018
+
+GET {{GameManager_HostAddress}}/game/
+Accept: application/json
+
+###

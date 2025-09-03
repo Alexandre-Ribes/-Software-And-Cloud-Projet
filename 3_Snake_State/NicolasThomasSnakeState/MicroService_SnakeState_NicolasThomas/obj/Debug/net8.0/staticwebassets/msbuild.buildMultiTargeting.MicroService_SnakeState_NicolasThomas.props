@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MicroService_SnakeState_NicolasThomas.props" />
+</Project>
