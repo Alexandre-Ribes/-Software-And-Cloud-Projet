@@ -70,7 +70,7 @@ class FoodManager:
 food_manager = FoodManager()
 
 # --- URL du Snake Service ---
-SNAKE_SERVICE_URL = "http://localhost:8003"  # à adapter selon ton Snake Service
+SNAKE_SERVICE_URL = "http://localhost:8003" # a adapter
 
 # --- Routes ---
 @app.post("/food/{game_id}/subscribe")
