@@ -2,7 +2,7 @@
 {
 	public class ScoreModel
 	{
-		public int Score { get; set; }
+		public int Score { get; set; } = 0;
 		public string? GameId { get; set; }
 		public DateTime LastUpdated { get; set; }
 

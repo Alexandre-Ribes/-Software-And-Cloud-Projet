@@ -1,6 +1,6 @@
-@ScoreService_HostAddress = http://localhost:5144
+@ScoreService_HostAddress = http://localhost:8060
 
-GET {{ScoreService_HostAddress}}/weatherforecast/
+GET {{ScoreService_HostAddress}}/game/
 Accept: application/json
 
 ###

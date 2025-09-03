@@ -4,8 +4,8 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER $APP_UID
 WORKDIR /app
-EXPOSE 8001
 EXPOSE 8003
+EXPOSE 8030
 
 
 # Cette phase est utilisée pour générer le projet de service

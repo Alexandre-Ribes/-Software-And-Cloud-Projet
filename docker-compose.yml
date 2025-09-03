@@ -1,0 +1,88 @@
+version: "3.9"
+services:
+  gamemanager:
+    build: 
+        context: /1_Game_Manager/GameManager
+        dockerfile: Dockerfile
+    container_name: gamemanager
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8001
+    ports:
+      - "8001:8001"
+    networks:
+      - snake-network
+
+  playerinput:
+    build: 
+        context: /2_Player_Input
+        dockerfile: Dockerfile
+    container_name: playerinput
+    ports:
+      - "8002:8002"
+    networks:
+      - snake-network
+
+  # snakestate:
+  #   build: 
+  #       context: /3_Snake_State/NicolasThomasSnakeState/MicroService_SnakeState_NicolasThomas
+  #       dockerfile: Dockerfile
+  #   container_name: snakestate
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Development
+  #     - ASPNETCORE_HTTP_PORTS=8003
+  #   ports:
+  #     - "8003:8003"
+  #   networks:
+  #     - snake-network
+
+  foodservice:
+    build: 
+        context: /4_Food_Service
+        dockerfile: Dockerfile
+    container_name: foodservice
+    ports:
+      - "8004:8004"
+    networks:
+      - snake-network
+
+  collisionservice:
+    build: 
+        context: /5_Collision_Service
+        dockerfile: Dockerfile
+    container_name: collisionservice
+    ports:
+      - "8005:8005"
+    networks:
+      - snake-network
+    
+  scoreservice:
+    build: 
+        context: /6_Score_Service/ScoreService
+        dockerfile: Dockerfile
+    container_name: scoreservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8006
+    ports:
+      - "8006:8006"
+    networks:
+      - snake-network
+
+  displayservice:
+    build: 
+        context: /7_Display_Service
+        dockerfile: Dockerfile
+    container_name: displayservice
+    ports:
+      - "8007:8007"
+    networks:
+      - snake-network
+    depends_on:
+      - gamemanager
+
+networks:
+  snake-network:
+    driver: bridge
+    driver_opts:
+        com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"
