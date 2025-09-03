@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "hy3DjAPMlxl9HBU1sY/0OvlBcs0yGy0VfLQpCiAQsIg=",
+  "Source": "MicroService_SnakeState_NicolasThomas",
+  "BasePath": "_content/MicroService_SnakeState_NicolasThomas",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
