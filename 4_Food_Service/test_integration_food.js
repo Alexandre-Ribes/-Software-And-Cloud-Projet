@@ -24,19 +24,19 @@ const displayServer = displayApp.listen(8010, () => {
 
 async function runTest() {
     try {
-        // 1️⃣ Subscribe le Display Service au Food Service
+        //Subscribe le Display Service au Food Service
         let r = await axios.post(`${FOOD_SERVICE_URL}/food/${GAME_ID}/subscribe`, { route: DISPLAY_URL });
         console.log("[Test] Subscribe:", r.data);
 
-        // 2️⃣ Simuler un déplacement du serpent
+        //Simuler un déplacement du serpent
         r = await axios.post(`${FOOD_SERVICE_URL}/food/${GAME_ID}/on-move`, { x: 5, y: 5 });
         console.log("[Test] On-Move:", r.data);
 
-        // 3️⃣ Manger la nourriture
+        //Manger la nourriture
         r = await axios.delete(`${FOOD_SERVICE_URL}/food/${GAME_ID}`);
         console.log("[Test] Eat Food:", r.data);
 
-        // 4️⃣ Attendre la notification
+        //Attendre la notification
         await new Promise(resolve => setTimeout(resolve, 1000));
         console.log("[Test] Événements reçus par Display:", receivedEvents);
     } catch (err) {
