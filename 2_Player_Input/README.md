@@ -20,26 +20,24 @@ diagramme de classe avec une seule classe
 
 diagramme de sequence
 
-|Client (Display Service)               Player Input Service                            Input                             Snake State Service
-|        |                                       |                                        |                                       |
-|        |Envoie les touches du joueur           |                                        |                                       |
-|        |-------------------------------------->|                                        |                                       |
-|        |                                       | Vérifie si un Input existe pour cet ID |                                       |
-|        |                                       |--------------------------------------->|                                       |
-|        |                                       | Crée un nouvel Input si nécessaire     |                                       |
-|        |                                       |<---------------------------------------|                                       |
-|        |                                       | Ajoute les touches reçues dans Input   |                                       |
-|        |                                       |--------------------------------------->|                                       |
-|        |                                       | Transforme les touches en directions   |                                       |
-|        |                                       |--------------------------------------->|                                       |
-|        |                                       | Obtient la liste des directions valides|                                       |
-|        |                                       |<---------------------------------------|                                       |
-|        |                                       |                      Notifie le service Snake State                            |
-|        |                                       |------------------------------------------------------------------------------->|
-|        |                                       |                      Transmet les directions au Snake State                    |
-|        |                                       |------------------------------------------------------------------------------->|
-|        | Reçoit la confirmation de mise à jour |                                        |                                       |
-|        |<--------------------------------------|                                        |                                       |
+participant Client as Display Service
+participant PlayerInput as Player Input Service
+participant Input as Input
+participant SnakeState as Snake State Service
+
+Client->>PlayerInput: POST /:id/on-update avec touches
+PlayerInput->>Input: Vérifie si Input existe pour l'ID
+alt Input inexistant
+    PlayerInput->>Input: Crée un nouvel Input
+end
+PlayerInput->>Input: Ajoute les touches reçues
+PlayerInput->>Input: Transforme touches en directions valides
+Input->>Input: getDirections() -> directions[]
+Input->>PlayerInput: directions[]
+PlayerInput->>Input: onUpdate(id) (déclenche Observer)
+Input->>SnakeState: Observer envoie directions au Snake State Service
+SnakeState-->>PlayerInput: 200 OK
+PlayerInput-->>Client: 200 OK { status: 'updated', sent: directions }
 
 
 
