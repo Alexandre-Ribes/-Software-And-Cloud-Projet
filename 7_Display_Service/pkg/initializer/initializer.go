@@ -67,8 +67,8 @@ func InitGame(conf InitializeConfig) (string, error) {
 }
 
 // Termine la partie en contactant le service de startup
-func EndGame(conf InitializeConfig) error {
-	resp, err := http.Post(conf.StartupServiceRoute+"stop", "application/json", nil)
+func EndGame(conf InitializeConfig, gameId string) error {
+	resp, err := http.Post(conf.StartupServiceRoute+gameId+"/stop", "application/json", nil)
 	if err != nil {
 		return err
 	}

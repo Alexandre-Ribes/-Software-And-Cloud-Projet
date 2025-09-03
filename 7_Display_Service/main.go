@@ -74,7 +74,7 @@ func GameLoop(gameId string) {
 	}
 
 	// Signalement au serveur distant que la partie est terminée
-	err := initializer.EndGame(initializer.DefaultConfig())
+	err := initializer.EndGame(initializer.DefaultConfig(), gameId)
 	if err != nil {
 		log.Printf("The following error occurred while ending the game: %v", err)
 	}
