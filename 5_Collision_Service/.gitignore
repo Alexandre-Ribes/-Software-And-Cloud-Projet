@@ -1,0 +1,46 @@
+# --- Node ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+*.log.*
+
+# --- TypeScript build/cache ---
+dist/
+build/
+*.tsbuildinfo
+
+# --- Tests / couverture ---
+coverage/
+.nyc_output/
+coverage/lcov-report/
+
+# --- Env (garde un exemple si besoin) ---
+.env
+.env.*
+!.env.example
+
+# --- OS / fichiers système ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# --- IDE / éditeurs ---
+.vscode/
+.idea/
+.vs/
+.history/
+
+# --- Docker (on garde Dockerfile & compose) ---
+docker-compose.override.yml
+
+# --- Outils divers ---
+.tmp/
+temp/
+tmp/
+.thunder-client/
