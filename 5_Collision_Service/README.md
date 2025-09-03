@@ -20,7 +20,7 @@ Microservice **minimaliste** en TypeScript/Express qui détermine si le serpent 
 Build + run :
 ```bash
 docker build -t collision-service .
-docker run --name collision --network app-net -p 8005:8005 \
+docker run --name collision -p 8005:8005 \
   -e DISPLAY_BASE_URL=http://display:8007 \
   collision-service
 
