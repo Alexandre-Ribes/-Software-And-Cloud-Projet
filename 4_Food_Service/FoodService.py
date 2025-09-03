@@ -38,7 +38,7 @@ class FoodManager:
             self.snakes[game_id] = []
         self.snakes[game_id].append(pos)
 
-    def generate_food(self, game_id: str, grid_width=20, grid_height=20, avoid: List[Position]=[]) -> Position:
+    def generate_food(self, game_id: str, grid_width=16, grid_height=16, avoid: List[Position]=[]) -> Position:
         snake_pos = self.snakes.get(game_id, [])
         avoid_positions = avoid + snake_pos
         while True:
@@ -70,7 +70,7 @@ class FoodManager:
 food_manager = FoodManager()
 
 # --- URL du Snake Service ---
-SNAKE_SERVICE_URL = "http://localhost:8003"  # à adapter selon ton Snake Service
+SNAKE_SERVICE_URL = "http://localhost:8003" # a adapter
 
 # --- Routes ---
 @app.post("/food/{game_id}/subscribe")
