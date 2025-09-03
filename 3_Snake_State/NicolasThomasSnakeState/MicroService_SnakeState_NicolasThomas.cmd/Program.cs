@@ -37,7 +37,7 @@ namespace MicroService_SnakeState_NicolasThomas.cmd
                 case "up":
                     y = Snake[0].y - 1;
                     NouveauPoint = (x, y);
-                    Snake.Prepend(NouveauPoint);
+                    Snake.Insert(0, NouveauPoint);
                     if (isEating == false)
                     {
                         Snake.Remove(Snake[Snake.Count - 1]);
@@ -46,7 +46,7 @@ namespace MicroService_SnakeState_NicolasThomas.cmd
                 case "down":
                     y = Snake[0].y + 1;
                     NouveauPoint = (x, y);
-                    Snake.Prepend(NouveauPoint);
+                    Snake.Insert(0,NouveauPoint);
                     if (isEating == false)
                     {
                         Snake.Remove(Snake[Snake.Count - 1]);
@@ -55,7 +55,7 @@ namespace MicroService_SnakeState_NicolasThomas.cmd
                 case "left":
                     x = Snake[0].x - 1;
                     NouveauPoint = (x, y);
-                    Snake.Prepend(NouveauPoint);
+                    Snake.Insert(0, NouveauPoint);
                     if (isEating == false)
                     {
                         Snake.Remove(Snake[Snake.Count - 1]);
@@ -64,7 +64,7 @@ namespace MicroService_SnakeState_NicolasThomas.cmd
                 case "right":
                    x = Snake[0].x + 1;
                     NouveauPoint = (x, y);
-                    Snake.Prepend(NouveauPoint);
+                    Snake.Insert(0, NouveauPoint);
                     if (isEating == false)
                     {
                         Snake.Remove(Snake[Snake.Count - 1]);
@@ -74,7 +74,7 @@ namespace MicroService_SnakeState_NicolasThomas.cmd
                     x = x + (Snake[0].x - Snake[1].x);
                     y = y + (Snake[0].y - Snake[1].y);
                     NouveauPoint = (x, y);
-                    Snake.Prepend(NouveauPoint);
+                    Snake.Insert(0,NouveauPoint);
                     if (isEating == false) {
                         Snake.Remove(Snake[Snake.Count-1]);
                     }

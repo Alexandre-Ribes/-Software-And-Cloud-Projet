@@ -15,7 +15,7 @@ namespace MicroService_SnakeState_NicolasThomas.Controllers
             this.repository = repository;
         }
 
-        [HttpPost]
+        [HttpPost("on-move")]
         public async Task<ActionResult<SnakeStateModel>> EnvoieListPosition(SnakeStateModel model)
         {
             var StateSnake = await repository.EnvoieListPosition(model);

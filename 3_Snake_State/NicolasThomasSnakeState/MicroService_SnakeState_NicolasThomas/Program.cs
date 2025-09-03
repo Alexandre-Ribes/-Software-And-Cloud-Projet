@@ -1,3 +1,5 @@
+using MicroService_SnakeState_NicolasThomas.Data.Repositories;
+
 namespace MicroService_SnakeState_NicolasThomas
 {
     public class Program
@@ -9,6 +11,9 @@ namespace MicroService_SnakeState_NicolasThomas
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            builder.Services.AddScoped<ISnakeStateRepository, APISnakeStateRepository>();
+
 
             var app = builder.Build();
 
