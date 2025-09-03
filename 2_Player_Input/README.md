@@ -1,45 +1,45 @@
+Alexis Louisfert 
+service d'input
+
 LLD
 
 diagramme de classe avec une seule classe
 
-+---------------------------------------------------+
+
 |       Input                                       |
-+---------------------------------------------------+
+|---------------------------------------------------|
 | - inputs: string[]                                |
 | - observers: Map<string, Observer>                |
 | - keyMap: Record<string, Direction>               |
-+---------------------------------------------------+
+|---------------------------------------------------|
 | + subscribe(id: string, callback: Observer): void |
 | + unsubscribe(id: string): void                   |
 | + addInput(key: string): void                     |
 | + getDirections(): Direction[]                    |
 | + onUpdate(id: string): void                      |
-+---------------------------------------------------+
 
-Client (Display Service)     Player Input Service       Input        Snake State Service
-        |                          |                     |                    |
-        | POST /:id/on-update      |                     |                    |
-        |------------------------->|                     |                    |
-        |                          | inputMap[id]?       |                    |
-        |                          |-------------------->|                    |
-        |                          |  new Input()        |                    |
-        |                          |<--------------------|                    |
-        |                          | addInput(key)       |                    |
-        |                          |-------------------->|                    |
-        |                          | getDirections()     |                    |
-        |                          |-------------------->|                    |
-        |                          | directions[]        |                    |
-        |                          |<--------------------|                    |
-        |                          | onUpdate(id)        |                    |
-        |                          |-------------------->| observer(id, directions)|
-        |                          |                     |------------------->|
-        |                          |                     | sendDirection(direction[])|
-        |                          |                     |<-------------------|
-        | 200 OK { status, sent }  |                     |                    |
-        |<-------------------------|                     |                    |
+diagramme de sequence
 
-
-
+|Client (Display Service)               Player Input Service                            Input                             Snake State Service
+|        |                                       |                                        |                                       |
+|        |Envoie les touches du joueur           |                                        |                                       |
+|        |-------------------------------------->|                                        |                                       |
+|        |                                       | Vérifie si un Input existe pour cet ID |                                       |
+|        |                                       |--------------------------------------->|                                       |
+|        |                                       | Crée un nouvel Input si nécessaire     |                                       |
+|        |                                       |<---------------------------------------|                                       |
+|        |                                       | Ajoute les touches reçues dans Input   |                                       |
+|        |                                       |--------------------------------------->|                                       |
+|        |                                       | Transforme les touches en directions   |                                       |
+|        |                                       |--------------------------------------->|                                       |
+|        |                                       | Obtient la liste des directions valides|                                       |
+|        |                                       |<---------------------------------------|                                       |
+|        |                                       |                      Notifie le service Snake State                            |
+|        |                                       |------------------------------------------------------------------------------->|
+|        |                                       |                      Transmet les directions au Snake State                    |
+|        |                                       |------------------------------------------------------------------------------->|
+|        | Reçoit la confirmation de mise à jour |                                        |                                       |
+|        |<--------------------------------------|                                        |                                       |
 
 
 
