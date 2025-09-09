@@ -146,3 +146,12 @@ Affiche l’état de la grille et reçoit les événements des autres services.
 6.  `POST /score/{id}/increment` → le score augmente.
 7.  `POST /collision/{id}/on-move` → vérifie si mort.
 8.  `POST /display/{id}/on-*` → mise à jour affichage.
+
+
+## Comment build le projet
+
+1. Ouvrir Docker Desktop
+2. Ouvrir un terminal et se placer à la racine du projet
+3. Exécuter la commande suivante : `docker compose up --build`
+
+NB : Le premier build du projet est toujours long (une dizaine de minutes en fonction de la configuration matérielle de la machine), en raison des différents packages à télécharger, puis en la création des images servant de base aux microservices.
