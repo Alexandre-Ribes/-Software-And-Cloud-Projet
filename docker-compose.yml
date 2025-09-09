@@ -22,6 +22,8 @@ services:
       - "8002:8002"
     networks:
       - snake-network
+    depends_on:
+      - gamemanager
 
   # snakestate:
   #   build: 
@@ -45,6 +47,8 @@ services:
       - "8004:8004"
     networks:
       - snake-network
+    depends_on:
+      - gamemanager
 
   collisionservice:
     build: 
@@ -55,6 +59,9 @@ services:
       - "8005:8005"
     networks:
       - snake-network
+    depends_on:
+      - gamemanager
+      # - snakestate
     
   scoreservice:
     build: 
@@ -68,6 +75,9 @@ services:
       - "8006:8006"
     networks:
       - snake-network
+    depends_on:
+      - gamemanager
+      - foodservice
 
   displayservice:
     build: 
@@ -80,6 +90,10 @@ services:
       - snake-network
     depends_on:
       - gamemanager
+      # - snakestate
+      - foodservice
+      - collisionservice
+      - scoreservice
 
 networks:
   snake-network:
